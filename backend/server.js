@@ -5,6 +5,10 @@ import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
 
+if (process.env.DEBUG_URL) {
+  delete process.env.DEBUG_URL;
+}
+
 dotenv.config();
 
 const app = express();
