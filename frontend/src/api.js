@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api" // 不用寫 full URL，React 會走同一個 domain
+  baseURL: process.env.REACT_APP_API_URL || "/api",
+  // Render 部署後用完整 URL
 });
 
 export default api;
